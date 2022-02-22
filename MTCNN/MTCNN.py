@@ -3,10 +3,10 @@ import os
 sys.path.append(os.getcwd())
 import argparse
 import torch
-from model.MTCNN_nets import PNet, ONet
+from .model.MTCNN_nets import PNet, ONet
 import math
 import numpy as np
-from utils.util import *
+from .utils.util import *
 import cv2
 import time
 
