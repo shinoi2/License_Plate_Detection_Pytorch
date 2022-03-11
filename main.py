@@ -12,12 +12,15 @@ import argparse
 import torch
 import time
 import cv2
+import os
+
 
 class VehicleLicensePlate:
-    LPRNet_model_path = './License_Plate_Detection_Pytorch/LPRNet/weights/Final_LPRNet_model.pth'
-    STNet_model_path = './License_Plate_Detection_Pytorch/LPRNet/weights/Final_STN_model.pth'
-    PNet_model_path = './License_Plate_Detection_Pytorch/MTCNN/weights/pnet_Weights'
-    ONet_model_path = './License_Plate_Detection_Pytorch/MTCNN/weights/onet_Weights'
+    path = os.path.dirname(__file__)
+    LPRNet_model_path = path + '/LPRNet/weights/Final_LPRNet_model.pth'
+    STNet_model_path = path + '/LPRNet/weights/Final_STN_model.pth'
+    PNet_model_path = path + '/MTCNN/weights/pnet_Weights'
+    ONet_model_path = path + '/MTCNN/weights/onet_Weights'
 
     def __init__(self):
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
