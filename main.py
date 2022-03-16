@@ -62,9 +62,9 @@ class VehicleLicensePlate:
         result = []
         rects = detector(image)
         for rect in rects:
-            top, left, bottom, right = rect[:4]
+            left, top, right, bottom = rect[:4]
             score = rect[-1]
-            img_box = image[int(left):int(right)+1, int(top):int(bottom)+1, :]
+            img_box = image[int(top):int(bottom)+1, int(left):int(right)+1, :]
             license = recognition(img_box)
             result.append({
                 "rect": {
